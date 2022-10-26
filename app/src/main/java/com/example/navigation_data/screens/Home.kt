@@ -45,7 +45,7 @@ fun Home(navController: NavHostController) {
 
             // A button composable to navigate to Profile Screen
             Button(onClick = {
-                navController.navigate(Routes.Profile.route +"/dj")
+                navController.navigate(Routes.Profile.route +"/variable")
             }) {
                 Text(text = "Navigate to Profile", color = Color.White)
             }
