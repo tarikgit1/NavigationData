@@ -4,9 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
-import androidx.compose.material.TextField
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,7 +20,7 @@ fun Home(navController: NavHostController) {
     var counter by remember {
         mutableStateOf(0)
     }
-    var text by rememberSaveable { mutableStateOf("Text") }
+
     // Box composable to center Items
     Box(
         modifier = Modifier
@@ -43,18 +41,11 @@ fun Home(navController: NavHostController) {
                 Text(text = "Increment Counter", color = Color.White)
             }
 
-            TextField(
-                value = text,
-                onValueChange = {
-                    text = it
-                },
-                label = { Text("Label") }
-            )
-
+            Spacer(modifier = Modifier.height(20.dp))
 
             // A button composable to navigate to Profile Screen
             Button(onClick = {
-                navController.navigate(Routes.Profile.route +"/$text")
+                navController.navigate(Routes.Profile.route +"/dj")
             }) {
                 Text(text = "Navigate to Profile", color = Color.White)
             }
